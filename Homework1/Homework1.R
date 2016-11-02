@@ -1,3 +1,27 @@
+sequence_1 <- c('buy Amazon', 'buy Yahoo', 'buy eBay', 'buy Yahoo', 'buy Yahoo', 'buy Oracle')
+sequence_2 <- c('buy Yaoo', 'buy eBay', 'buy Yahoo', 'buy Oracle')
+
+subseq_detect <- function(sequence_1, sequence_2){
+  C = NULL
+  i <- j <-  1
+  while(i <= length(sequence_1) & j <= length(sequence_2)){
+    if(sequence_1[i] == sequence_2[j]){
+      C[j] <- 1
+      i <- i + 1
+      j <- j + 1
+    } else {
+      i <- i + 1
+    }
+  }
+  if(sum(C) == length(sequence_2)){
+    print("we found a subsequence")
+  } else{
+    print("it is not a subsequence")
+  }
+}
+
+subseq_detect(sequence_1, sequence_2)
+
 l = c(10, 1, 10, 10)
 h = c(55, 50, 55, 1)
 
